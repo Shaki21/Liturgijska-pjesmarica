@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "16663178156",
+    "project_id": "liturgijska-pjesmarica",
+    "storage_bucket": "liturgijska-pjesmarica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16663178156:android:b0d062b4ec7e0981aa6809",
+        "android_client_info": {
+          "package_name": "com.ante.LiturgijskaPjesmarica"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwApJM_0ihHVyZE6rwGKN5gB30SQCoJKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
