@@ -9,6 +9,17 @@
 
 
     <ImageView
+        android:id="@+id/backButton2"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="380dp"
         android:layout_height="801dp"
@@ -48,113 +59,109 @@
         app:layout_constraintTop_toTopOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.46" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
+    <EditText
+        android:id="@+id/button1"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_buttonlogin"
+        android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:text="E-mail address"
-        android:textColor="#8F7655"
-        android:textColorHighlight="#FFFFFF"
+        android:hint="Ime"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/gradient_buttonlogin"
-        android:fontFamily="@font/crimson_text"
-        android:text="Username"
-        android:textColor="#8F7655"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_buttonlogin"
+    <EditText
+        android:id="@+id/button2"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:text="Password"
-        android:textColor="#8F7655"
+        android:hint="Prezime"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/gradient_buttonlogin"
+    <EditText
+        android:id="@+id/button3"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:text="Conform password"
-        android:textColor="#8F7655"
+        android:hint="Korisničko ime"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <EditText
+        android:id="@+id/button4"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#DBC0A0"
+        android:fontFamily="@font/crimson_text"
+        android:hint="Lozinka"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/button5"
+        style="@style/TransparentButton"
         android:layout_width="231dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/gradient_buttoncolor"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/crimson_texts"
         android:text="Registriraj se"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="73dp"
-        android:layout_height="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Već imate račun?"
         android:textColor="@color/white"
         android:textSize="9sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="41dp"
-        android:layout_height="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="188dp"
         android:text="Prijavi se"
         android:textColor="@color/white"
         android:textSize="9sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

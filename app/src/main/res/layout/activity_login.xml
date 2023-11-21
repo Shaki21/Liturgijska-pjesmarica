@@ -20,43 +20,56 @@
         app:layout_constraintVertical_bias="0.436"
         app:srcCompat="@drawable/naslovna1" />
 
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:clickable="true"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="124dp"
-        android:layout_height="23dp"
+        android:layout_width="156dp"
+        android:layout_height="22dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/crimson_text"
         android:text="Prijavite se na vaš račun"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="240dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="232dp"
+        android:layout_width="288dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="192dp"
         android:fontFamily="@font/crimson_texts"
         android:text="Dobro došli"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <EditText
         android:id="@+id/button"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
         android:layout_marginBottom="296dp"
-        android:background="#FFF0DD"
+        android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:text="Username"
-        android:textColor="#8F7655"
+        android:hint="Korisničko ime"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,15 +78,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <EditText
         android:id="@+id/button2"
-        android:layout_width="212dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/gradient_buttonlogin"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:text="Username"
-        android:textColor="#8F7655"
+        android:hint="Lozinka"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -83,8 +97,8 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="231dp"
-        android:layout_height="40dp"
-        android:background="@drawable/gradient_buttoncolor"
+        android:layout_height="55dp"
+        android:backgroundTint="#8F7655"
         android:fontFamily="@font/crimson_texts"
         android:text="Prijavi se"
         android:textColor="@color/white"
