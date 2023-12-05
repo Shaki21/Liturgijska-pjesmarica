@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
 
     <ImageView
@@ -26,7 +27,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:clickable="true"
+        android:focusable="true"
         android:src="@drawable/back_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +37,7 @@
         android:layout_width="156dp"
         android:layout_height="22dp"
         android:layout_marginTop="12dp"
+        android:gravity="center"
         android:fontFamily="@font/crimson_text"
         android:text="Prijavite se na vaš račun"
         android:textColor="@color/white"
@@ -50,6 +52,7 @@
         android:layout_width="288dp"
         android:layout_height="70dp"
         android:layout_marginTop="192dp"
+        android:gravity="center"
         android:fontFamily="@font/crimson_texts"
         android:text="Dobro došli"
         android:textColor="@color/white"
@@ -60,14 +63,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/button"
+        android:id="@+id/log_email"
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="296dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:hint="Korisničko ime"
+        android:hint="Adresa e-pošte"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
@@ -79,7 +82,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/button2"
+        android:id="@+id/log_pass"
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
@@ -89,16 +92,18 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
+        android:ems="10"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/log_email" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button3"
         android:layout_width="231dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#8F7655"
+        android:layout_height="48dp"
+        android:background="@drawable/gradient_buttonlogin"
         android:fontFamily="@font/crimson_texts"
         android:text="Prijavi se"
         android:textColor="@color/white"
@@ -106,8 +111,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintTop_toBottomOf="@+id/log_pass"
+        app:layout_constraintVertical_bias="0.382" />
 
     <TextView
         android:id="@+id/textView6"
@@ -120,7 +125,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/log_pass" />
 
     <TextView
         android:id="@+id/textView5"

@@ -60,108 +60,101 @@
         app:layout_constraintVertical_bias="0.46" />
 
     <EditText
-        android:id="@+id/button1"
+        android:id="@+id/reg_email"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:hint="Ime"
+        android:hint="Adresa e-pošte"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/button2"
+        android:id="@+id/reg_loz2"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
-        android:hint="Prezime"
+        android:hint="Ponovo upišite lozinku"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_lozinka" />
 
     <EditText
-        android:id="@+id/button3"
+        android:id="@+id/reg_lozinka"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#DBC0A0"
-        android:fontFamily="@font/crimson_text"
-        android:hint="Korisničko ime"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <EditText
-        android:id="@+id/button4"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
         android:hint="Lozinka"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_email" />
 
-    <Button
-        android:id="@+id/button5"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reg_btn"
         style="@style/TransparentButton"
         android:layout_width="231dp"
         android:layout_height="40dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/gradient_buttonlogin"
         android:fontFamily="@font/crimson_texts"
         android:text="Registriraj se"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_loz2" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
         android:text="Već imate račun?"
         android:textColor="@color/white"
         android:textSize="9sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="188dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="132dp"
         android:text="Prijavi se"
         android:textColor="@color/white"
         android:textSize="9sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/reg_btn"
         app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

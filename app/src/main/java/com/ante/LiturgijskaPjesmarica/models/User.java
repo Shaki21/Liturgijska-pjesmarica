@@ -3,17 +3,14 @@ package com.ante.LiturgijskaPjesmarica.models;
 import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class User {
-    public String firstName;
-    public String lastName;
-    public String username;
+    public String email;
     public String password;
+    public String confirmPassword;
 
-    public User(){}
 
-    public User(String firstName, String lastName, String username, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
+    public User(String email, String password, String confirmPassword) {
+        this.email = email;
         this.password = password;
+        this.confirmPassword = confirmPassword;
     }
 }

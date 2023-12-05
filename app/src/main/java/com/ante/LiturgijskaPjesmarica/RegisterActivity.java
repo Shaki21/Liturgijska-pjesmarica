@@ -18,8 +18,11 @@ import android.widget.Toast;
 
 
 import com.ante.LiturgijskaPjesmarica.models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,11 +44,11 @@ public class RegisterActivity extends AppCompatActivity{
         // Inicijalizacija FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
 
-        EditText firstNameTxt = findViewById(R.id.button1);
-        EditText lastNameTxt = findViewById(R.id.button2);
-        EditText usernameTxt = findViewById(R.id.button3);
-        EditText passwordTxt = findViewById(R.id.button4);
-        Button submitBtn = findViewById(R.id.button5);
+        //Polja za unos podataka
+        EditText emailTxt = findViewById(R.id.reg_email);
+        EditText passwordTxt = findViewById(R.id.reg_lozinka);
+        EditText passwordCnf = findViewById(R.id.reg_loz2);
+        Button submitBtn = findViewById(R.id.reg_btn);
         ImageView backButton = findViewById(R.id.backButton2);
         DatabaseReference usersDbRef = this.db.getReference("users");
 
@@ -54,28 +57,21 @@ public class RegisterActivity extends AppCompatActivity{
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User u = new User(
-                        firstNameTxt.getText().toString(),
-                        lastNameTxt.getText().toString(),
-                        usernameTxt.getText().toString(),
-                        passwordTxt.getText().toString()
-                );
-                usersDbRef.setValue(u)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(RegisterActivity.this, "Error registering user", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+               FirebaseAuth.getInstance()
+                       .createUserWithEmailAndPassword(emailTxt.getText().toString(), passwordTxt.getText().toString())
+                       .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                           @Override
+                           public void onComplete(@NonNull Task<AuthResult> task) {
+                               if(task.isSuccessful()){
+                                   Toast.makeText(RegisterActivity.this, "Uspješno registriran!", Toast.LENGTH_SHORT).show();
+                                   Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                   startActivity(intent);
+                                   finish();
+                               }else {
+                                   Toast.makeText(RegisterActivity.this, task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT ).show();
+                               }
+                           }
+                       });
             }
 
         });
