@@ -11,9 +11,20 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setBackgroundDrawableResource(R.drawable.gradient_background);
         setContentView(R.layout.activity_home);
 
+
+        ImageView iconProfile = findViewById(R.id.userIcon);
+
+        iconProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 }

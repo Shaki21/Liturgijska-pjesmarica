@@ -45,15 +45,16 @@ public class RegisterActivity extends AppCompatActivity{
         mAuth = FirebaseAuth.getInstance();
 
         //Polja za unos podataka
+        EditText usernameTxt = findViewById(R.id.reg_username);
         EditText emailTxt = findViewById(R.id.reg_email);
         EditText passwordTxt = findViewById(R.id.reg_lozinka);
         EditText passwordCnf = findViewById(R.id.reg_loz2);
         Button submitBtn = findViewById(R.id.reg_btn);
         ImageView backButton = findViewById(R.id.backButton2);
-        DatabaseReference usersDbRef = this.db.getReference("users");
 
 
-
+        //TODO kada se vrati unazad vraca se na app
+        //TODO popraviti unos usera na realtime database
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity{
                            @Override
                            public void onComplete(@NonNull Task<AuthResult> task) {
                                if(task.isSuccessful()){
+                                   FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new User(usernameTxt.getText().toString(), emailTxt.getText().toString(), ""));
                                    Toast.makeText(RegisterActivity.this, "Uspješno registriran!", Toast.LENGTH_SHORT).show();
                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                    startActivity(intent);

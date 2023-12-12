@@ -4,19 +4,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:layout_gravity="center"
+    tools:context=".HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/gradient_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="213dp"
-        android:layout_height="796dp"
-        android:text="This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM.This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM. This is SCUM."
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="202dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/crimson_texts"
+        android:gravity="center"
+        android:text="VRIJEME DOŠAŠĆA"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="202dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:fontFamily="@font/crimson_texts"
+        android:text="BOŽIĆNO VRIJEME"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="241dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:fontFamily="@font/crimson_texts"
+        android:text="KORIZMENO VRIJEME"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:fontFamily="@font/crimson_texts"
+        android:text="USKRSNO VRIJEME"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="255dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:fontFamily="@font/crimson_texts"
+        android:text="VRIJEME KROZ GODINU"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="233dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/crimson_texts"
+        android:gravity="center"
+        android:text="SVETKOVINE, BLAGDANI I SPOMENDANI"
+        android:textColor="@color/colorBrown"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBrown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/menu_svg" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

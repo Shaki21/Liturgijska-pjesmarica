@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@drawable/gradient_background">
 
 
@@ -23,7 +24,7 @@
         android:id="@+id/imageView3"
         android:layout_width="380dp"
         android:layout_height="801dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -48,22 +49,36 @@
         android:id="@+id/textView7"
         android:layout_width="109dp"
         android:layout_height="17dp"
-        android:layout_marginBottom="316dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/crimson_texts"
         android:text="Kreirajte svoj račun"
         android:textColor="@color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/reg_username"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#DBC0A0"
+        android:fontFamily="@font/crimson_text"
+        android:hint="Korisničko ime"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
         android:id="@+id/reg_email"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
         android:hint="Adresa e-pošte"
@@ -73,13 +88,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_username" />
 
     <EditText
         android:id="@+id/reg_loz2"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
         android:hint="Ponovo upišite lozinku"
@@ -96,7 +111,7 @@
         android:id="@+id/reg_lozinka"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
         android:hint="Lozinka"
