@@ -4,10 +4,9 @@ import com.google.firebase.database.IgnoreExtraProperties;
 @IgnoreExtraProperties
 public class User {
     private String username;
-    private String profilePicture;
     public String email;
-    public String password;
-    public String confirmPassword;
+    private String profilePicture;
+
 
     public User() {
     }
@@ -18,13 +17,6 @@ public class User {
         this.profilePicture = profilePicture;
     }
 
-    public User(String username, String profilePicture, String email, String password, String confirmPassword) {
-        this.username = username;
-        this.profilePicture = profilePicture;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-    }
 
 
     public String getUsername() {

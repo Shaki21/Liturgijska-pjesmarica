@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
         ImageView iconProfile = findViewById(R.id.userIcon);
+        TextView vrijemeDosasca = findViewById(R.id.textView11);
+
 
         iconProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,6 +26,17 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        vrijemeDosasca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, VrijemeDosascaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 
 

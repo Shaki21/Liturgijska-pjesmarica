@@ -48,12 +48,10 @@ public class RegisterActivity extends AppCompatActivity{
         EditText usernameTxt = findViewById(R.id.reg_username);
         EditText emailTxt = findViewById(R.id.reg_email);
         EditText passwordTxt = findViewById(R.id.reg_lozinka);
-        EditText passwordCnf = findViewById(R.id.reg_loz2);
         Button submitBtn = findViewById(R.id.reg_btn);
         ImageView backButton = findViewById(R.id.backButton2);
 
 
-        //TODO kada se vrati unazad vraca se na app
         //TODO popraviti unos usera na realtime database
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
