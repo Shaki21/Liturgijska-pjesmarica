@@ -11,7 +11,10 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -64,6 +67,14 @@ public class RegisterActivity extends AppCompatActivity{
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Dobavljanje unesenih podataka
+                String email = emailTxt.getText().toString();
+
+                // Provjera ispravnosti e-mail adrese
+                if (!isValidEmail(email)) {
+                    Toast.makeText(RegisterActivity.this, "Unesite ispravnu e-mail adresu", Toast.LENGTH_SHORT).show();
+                    return; // Prekini registraciju ako e-mail adresa nije ispravna
+                }
                FirebaseAuth.getInstance()
                        .createUserWithEmailAndPassword(emailTxt.getText().toString(), passwordTxt.getText().toString())
                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -75,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity{
                                    Toast.makeText(RegisterActivity.this, "Uspješno registriran!", Toast.LENGTH_SHORT).show();
                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                    startActivity(intent);
-                                   finish();
+                                   finishAffinity();
                                }else {
                                    Toast.makeText(RegisterActivity.this, task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT ).show();
                                }
@@ -104,6 +115,16 @@ public class RegisterActivity extends AppCompatActivity{
             }
         });
 
+        usernameTxt.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    emailTxt.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
         emailTxt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -112,6 +133,17 @@ public class RegisterActivity extends AppCompatActivity{
                 } else {
                     emailTxt.setHint("Adresa e-pošte");
                 }
+            }
+        });
+
+        emailTxt.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)){
+                    passwordTxt.requestFocus();
+                    return true;
+                }
+                return false;
             }
         });
 
@@ -133,6 +165,10 @@ public class RegisterActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+    }
+
+    private boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
 }
