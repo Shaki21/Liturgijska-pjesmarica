@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/backButton2"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
@@ -24,36 +24,37 @@
         android:id="@+id/imageView3"
         android:layout_width="380dp"
         android:layout_height="801dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="228dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logoesd" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="222dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="272dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
         android:fontFamily="@font/crimson_texts"
+        android:gravity="center"
         android:text="Registriraj se"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="109dp"
-        android:layout_height="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:gravity="center"
         android:fontFamily="@font/crimson_texts"
         android:text="Kreirajte svoj račun"
         android:textColor="@color/white"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -61,7 +62,7 @@
     <EditText
         android:id="@+id/reg_username"
         android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
@@ -69,6 +70,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
+        android:textCursorDrawable="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +79,7 @@
     <EditText
         android:id="@+id/reg_email"
         android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
@@ -85,6 +87,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
+        android:textCursorDrawable="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +97,7 @@
     <EditText
         android:id="@+id/reg_lozinka"
         android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
@@ -103,6 +106,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="12sp"
+        android:textCursorDrawable="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +118,7 @@
         style="@style/TransparentButton"
         android:layout_width="231dp"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/gradient_buttonlogin"
         android:fontFamily="@font/crimson_texts"
         android:text="Registriraj se"
@@ -124,30 +128,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_lozinka" />
 
-    <TextView
-        android:id="@+id/textView9"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:text="Već imate račun?"
-        android:textColor="@color/white"
-        android:textSize="9sp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_btn"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/reg_prijavi_se"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Prijavi se"
-        android:textColor="@color/white"
-        android:textSize="9sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/reg_btn" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:text="Već imate račun?"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/reg_prijavi_se"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Prijavi se"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

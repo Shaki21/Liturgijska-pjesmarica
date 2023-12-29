@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setBackgroundDrawableResource(R.drawable.gradient_background);
         setContentView(R.layout.activity_main);
         TextView textView1 = findViewById(R.id.textView1);
-
         Button prijaviSe = findViewById(R.id.prijaviSe);
 
-        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
             startActivity(new Intent(MainActivity.this,HomeActivity.class));
             finish();
         }
