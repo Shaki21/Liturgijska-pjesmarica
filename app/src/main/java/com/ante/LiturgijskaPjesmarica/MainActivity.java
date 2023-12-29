@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         TextView textView1 = findViewById(R.id.textView1);
 
         Button prijaviSe = findViewById(R.id.prijaviSe);
+
+        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+            finish();
+        }
         prijaviSe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

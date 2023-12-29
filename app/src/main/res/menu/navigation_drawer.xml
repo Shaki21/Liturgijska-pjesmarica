@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/godina_a"
+        android:title="@string/godina_a"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/godina_b"
+        android:title="@string/godina_b"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/godina_c"
+        android:title="@string/godina_c"
+        android:checkable="true"/>
+</menu>

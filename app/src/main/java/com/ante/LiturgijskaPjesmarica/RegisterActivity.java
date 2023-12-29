@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 
 import android.os.Handler;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -32,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity{
 
     FirebaseDatabase db;
     FirebaseAuth mAuth;
+    DatabaseReference usersDbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,12 @@ public class RegisterActivity extends AppCompatActivity{
 
         //Spajanje na bazu
         this.db = FirebaseDatabase.getInstance("https://liturgijska-pjesmarica-default-rtdb.europe-west1.firebasedatabase.app");
+
         // Inicijalizacija FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
+
+        // Deklaracija DatabaseReference izvan onCreate
+        usersDbRef = this.db.getReference("users");
 
         //Polja za unos podataka
         EditText usernameTxt = findViewById(R.id.reg_username);
@@ -50,9 +57,10 @@ public class RegisterActivity extends AppCompatActivity{
         EditText passwordTxt = findViewById(R.id.reg_lozinka);
         Button submitBtn = findViewById(R.id.reg_btn);
         ImageView backButton = findViewById(R.id.backButton2);
+        TextView prijaviSe = findViewById(R.id.reg_prijavi_se);
 
 
-        //TODO popraviti unos usera na realtime database
+        prijaviSe.setPaintFlags(prijaviSe.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +70,8 @@ public class RegisterActivity extends AppCompatActivity{
                            @Override
                            public void onComplete(@NonNull Task<AuthResult> task) {
                                if(task.isSuccessful()){
-                                   FirebaseDatabase.getInstance().getReference("user/" + FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(new User(usernameTxt.getText().toString(), emailTxt.getText().toString(), ""));
+                                   usersDbRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                           .setValue(new User(usernameTxt.getText().toString(), emailTxt.getText().toString(), ""));
                                    Toast.makeText(RegisterActivity.this, "Uspješno registriran!", Toast.LENGTH_SHORT).show();
                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                    startActivity(intent);
@@ -84,9 +93,46 @@ public class RegisterActivity extends AppCompatActivity{
             }
         });
 
+        usernameTxt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    usernameTxt.setHint("");
+                }else{
+                    usernameTxt.setHint("Korisničko ime");
+                }
+            }
+        });
 
+        emailTxt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    emailTxt.setHint("");
+                } else {
+                    emailTxt.setHint("Adresa e-pošte");
+                }
+            }
+        });
 
+        passwordTxt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    passwordTxt.setHint("");
+                } else {
+                    passwordTxt.setHint("Lozinka");
+                }
+            }
+        });
 
-
+        prijaviSe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }

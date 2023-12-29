@@ -34,7 +34,6 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/user_icon2"
-
             />
     </androidx.cardview.widget.CardView>
 
@@ -80,5 +79,16 @@
         app:layout_constraintEnd_toEndOf="@+id/btnUploadImage"
         app:layout_constraintStart_toStartOf="@+id/btnUploadImage"
         app:layout_constraintTop_toBottomOf="@+id/btnUploadImage" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogOut"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogOut"
+        app:layout_constraintStart_toStartOf="@+id/btnLogOut"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogOut"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

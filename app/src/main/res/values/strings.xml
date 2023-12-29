@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Liturgijska Pjesmarica</string>
+    <string name="mail_subheader_title">TITLE</string>
+    <string name="godina_a">GODINA A</string>
+    <string name="godina_b">GODINA B</string>
+    <string name="godina_c">GODINA C</string>
+    <string name="header_title">LITURGIJSKA GODINA</string>
+
 </resources>
