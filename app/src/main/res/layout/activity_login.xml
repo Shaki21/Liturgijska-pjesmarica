@@ -23,7 +23,7 @@
 
     <ImageView
         android:id="@+id/backButton"
-        android:layout_width="60dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
@@ -65,7 +65,7 @@
     <EditText
         android:id="@+id/log_email"
         android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="296dp"
         android:backgroundTint="#DBC0A0"
@@ -84,7 +84,7 @@
     <EditText
         android:id="@+id/log_pass"
         android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginTop="5dp"
         android:backgroundTint="#DBC0A0"
         android:fontFamily="@font/crimson_text"
