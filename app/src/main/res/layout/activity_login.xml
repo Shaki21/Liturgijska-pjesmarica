@@ -115,13 +115,13 @@
         app:layout_constraintVertical_bias="0.382" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/log_res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Zaboravili ste lozinku?"
         android:textColor="@color/white"
-        android:textSize="9sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,29 +129,26 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="64dp"
-        android:layout_height="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:text="Nemate račun?"
         android:textColor="@color/white"
-        android:textSize="9sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        android:textSize="11sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="Registriraj se"
         android:textColor="@color/white"
-        android:textSize="9sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="11sp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

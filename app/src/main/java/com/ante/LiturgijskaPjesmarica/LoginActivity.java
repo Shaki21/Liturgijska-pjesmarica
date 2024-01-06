@@ -35,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         EditText logEmail = findViewById(R.id.log_email);
         EditText logPass = findViewById(R.id.log_pass);
         TextView regRed = findViewById(R.id.textView8);
+        TextView logRes = findViewById(R.id.log_res);
+
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -64,6 +66,14 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
 
+            }
+        });
+
+        logRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RestartPasswordActivity.class);
+                startActivity(intent);
             }
         });
 
