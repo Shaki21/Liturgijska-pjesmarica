@@ -14,14 +14,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         Button loginBtn = findViewById(R.id.button3);
         EditText logEmail = findViewById(R.id.log_email);
         EditText logPass = findViewById(R.id.log_pass);
+        TextView regRed = findViewById(R.id.textView8);
+        TextView logRes = findViewById(R.id.log_res);
+
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -57,12 +62,64 @@ public class LoginActivity extends AppCompatActivity {
                                 finish();
                             }else {
                                 Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT ).show();
-                            }
+                        }
                         }
                     });
 
             }
         });
+
+        logRes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RestartPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+            if (hasFocus){
+                logEmail.setHint("");
+            }else {
+                logEmail.setHint("Adresa e-pošte");
+            }
+            }
+        });
+
+        logEmail.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)){
+                    logPass.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        logPass.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    logPass.setHint("");
+                }else {
+                    logPass.setHint("Lozinka");
+                }
+            }
+
+        });
+
+        regRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 }
