@@ -24,12 +24,13 @@ public class RestartPasswordActivity extends AppCompatActivity {
     ImageView backBtn;
     FirebaseAuth mAuth;
     String strEmail;
+    EditText resEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restart_password);
 
-        EditText resEmail = findViewById(R.id.res_email);
+        resEmail = findViewById(R.id.res_email);
         resBtn = findViewById(R.id.res_btn);
         backBtn = findViewById(R.id.backButton);
 
@@ -66,6 +67,7 @@ public class RestartPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
         resEmail.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -79,7 +81,6 @@ public class RestartPasswordActivity extends AppCompatActivity {
         });
     }
     private void ResetPassword(){
-
         mAuth.sendPasswordResetEmail(strEmail)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
